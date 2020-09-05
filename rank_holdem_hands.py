@@ -21,7 +21,7 @@ def transformHand(handsStr):
 
     # When hand is pair
     if(hand1Num == hand2Num):
-        return ("Pair " + hand1Num)
+        return ("Pair " + hand1Num.upper())
     
     # When hand is suited
     if(hand1Suit == hand2Suit):
@@ -52,7 +52,7 @@ def createHandAvgOddsTupleList(transformedHandOddsDict):
     tHandAvgOddsTupleList = []
 
     for tHand, oddsList in transformedHandOddsDict.items():
-        avgOdds = round(sum(oddsList)/float(len(oddsList)), 3)
+        avgOdds = round(sum(oddsList)/float(len(oddsList)), 5)
 
         tHandAvgOddsTupleList.append((tHand, avgOdds))
     
@@ -64,7 +64,7 @@ def createHandAvgOddsTupleDict(transformedHandOddsDict):
     tHandAvgOddsTupleDict = {}
 
     for tHand, oddsList in transformedHandOddsDict.items():
-        avgOdds = round(sum(oddsList)/float(len(oddsList)), 3)
+        avgOdds = round(sum(oddsList)/float(len(oddsList)), 5)
         tHandAvgOddsTupleDict[tHand] = avgOdds
 
     return tHandAvgOddsTupleDict
